@@ -1,0 +1,455 @@
+% ------------------------------------------------------------------------
+% INTRODUÇÃO
+% ------------------------------------------------------------------------
+% ---------------------------------
+% TEMA
+% ---------------------------------
+% (CORPORATION, 2016) = manual de otimização da Intel.
+@manual{
+    Intel2016Architectures,
+	author = {Intel Corporation},
+	date-added = {2016-06},
+	date-modified = {2016-06},
+	month = {Jun.},
+	title = {Intel® 64 and IA-32 Architectures Optimization Reference Manual},
+	url = {https://www.intel.com/content/dam/www/public/us/en/documents/manuals/64-ia-32-architectures-optimization-manual.pdf},
+	urlaccessdate = {02 jun. 2019},
+	year = {2016}
+}
+% Horn (2018) = artigo da Google Project Zero.
+@misc{
+    Jann2018Reading,
+    author = {Jann Horn},
+    date-added = {2018-01-03},
+    date-modified = {2018-01-03},
+    howpublished = {Google Project Zero},
+    keywords = {googleprojectzero},
+    title = {Reading privileged memory with a side-channel},
+    url = {https://googleprojectzero.blogspot.com/2018/01/reading-privileged-memory-with-side.html},
+    urlaccessdate = {15 set 2018},
+    year = {2018}
+}
+% (KOCHER et al., 2019) = artigo do site oficial.
+@inproceedings{
+    Kocher2018Spectre,
+    author = {Paul Kocher and Jann Horn and Anders Fogh and and Daniel Genkin and Daniel Gruss and Werner Haas and Mike Hamburg and Moritz Lipp and Stefan Mangard and Thomas Prescher and Michael Schwarz and Yuval Yarom},
+    title = {Spectre Attacks: Exploiting Speculative Execution},
+    booktitle = {40th IEEE Symposium on Security and Privacy (S\&P'19)},
+    year = {2019}
+}
+% ---------------------------------
+% JUSTIFICATIVA
+% ---------------------------------
+% (TECHNOLOGY, 2018) = site oficial de atualizações.
+@misc{
+    Graz2018Meltdown,
+	author = {Graz University of Technology},
+	date-added = {2018-01-02 08:23:00 +0000},
+	date-modified = {2018-03-23 17:57:00 +0000},
+	howpublished = {Graz University of Technology},
+	keywords = {meltdownattack, spectreattack},
+	title = {Meltdown and Spectre},
+	url = {https://meltdownattack.com/},
+	urlaccessdate = {15 set 2018},
+	year = {2018},
+	bdsk-Url-1 = {https://meltdownattack.com/},
+	bdsk-Url-2 = {https://spectreattack.com/}
+}
+% (CORPORATION, 2018) = lista de chips que ficarão sem correção.
+@manual{
+    Intel2018Microcode,
+	author = {Intel Corporation},
+	date-added = {2018-04-03},
+	date-modified = {2018-04-03},
+	month = {Abr.},
+	title = {Microcode Revision Guidance},
+	url = {https://newsroom.intel.com/wp-content/uploads/sites/11/2018/04/microcode-update-guidance.pdf},
+	urlaccessdate = {15 set. 2018},
+	year = {2018}
+}
+% ---------------------------------
+% PROBLEMA E QUESTÃO DE PESQUISA
+% ---------------------------------
+% ---------------------------------
+% OBJETIVOS
+% ---------------------------------
+% ---------------------------------
+% PROCEDIMENTOS METODOLÓGICOS
+% ---------------------------------
+% ---------------------------------
+% ORGANIZAÇÃO DO ARTIGO
+% ---------------------------------
+% ------------------------------------------------------------------------
+% REFERENCIAL TEÓRICO
+% ------------------------------------------------------------------------
+% ---------------------------------
+% CONTEXTUALIZAÇÃO
+% ---------------------------------
+% Lipp et al. (2018) = artigo do site oficial.
+@inproceedings{
+    Lipp2018Meltdown,
+    author = {Moritz Lipp and Michael Schwarz and Daniel Gruss and Thomas Prescher and Werner Haas and Anders Fogh and Jann Horn and Stefan Mangard and Paul Kocher and Daniel Genkin and Yuval Yarom and Mike Hamburg},
+    title = {Meltdown: Reading Kernel Memory from User Space},
+    booktitle = {27th {USENIX} Security Symposium ({USENIX} Security 18)},
+    year = {2018}
+}
+% Fogh (2017) = artigo de Anders mostrando o resultado negativo.
+@misc{
+    Anders2017Reading,
+    author = {Anders Fogh},
+    date-added = {2017-07-28},
+    date-modified = {2017-07-28},
+    howpublished = {Cyber WTF},
+    title = {Negative Result: Reading Kernel Memory From User Mode},
+    url = {https://cyber.wtf/2017/07/28/negative-result-reading-kernel-memory-from-user-mode/},
+    urlaccessdate = {02 jun 2019},
+    year = {2017}
+}
+% (GREENBERG, 2018) = jornal Wired, com as entrevistas.
+@misc{
+    Andy2018Triple,
+    author = {Andy Greenberg},
+    date-added = {2018-07-01},
+    date-modified = {2018-07-01},
+    howpublished = {Wired, Condé Nast},
+    title = {Triple Meltdown: How So Many Researchers Found A 20-Year-Old Chip Flaw At The Same Time},
+    url = {https://www.wired.com/story/meltdown-spectre-bug-collision-intel-chip-flaw-discovery/},
+    urlaccessdate = {02 jun 2019},
+    year = {2018}
+}
+% (CORPORATION, 2018a) = justifica as especulações de perda de desempenho.
+@misc{
+    Intel2018NewsIssues,
+	author = {Intel Corporation},
+	date-added = {2018-01-04},
+	date-modified = {2018-01-04},
+	howpublished = {News Byte},
+	keywords = {intel-news-002},
+	title = {Intel Issues Updates to Protect Systems from Security Exploits},
+	url = {https://newsroom.intel.com/news-releases/intel-issues-updates-protect-systems-security-exploits/},
+	urlaccessdate = {28 set 2018},
+	year = {2018}
+}
+% (CORPORATION, 2018c) = lista de afetados e informações atualizadas.
+@misc{
+    Intel2018SA00088,
+	author = {Intel Corporation},
+	date-added = {2018-01-03},
+	date-modified = {2018-04-04},
+	howpublished = {Intel Corporation},
+	keywords = {intel-sa-00088},
+	title = {Speculative Execution and Indirect Branch Prediction Side Channel Analysis Method},
+	url = {https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00088.html},
+	urlaccessdate = {15 set 2018},
+	year = {2018}
+}
+% ---------------------------------
+% TRABALHOS RELACIONADOS
+% ---------------------------------
+% Foreshadow
+@inproceedings{
+    VanBulck2018Foreshadow,
+    author = {Van Bulck, Jo and Minkin, Marina and Weisse, Ofir and Genkin, Daniel and Kasikci, Baris and Piessens, Frank and Silberstein, Mark and Wenisch, Thomas F. and Yarom, Yuval and Strackx, Raoul},
+    title = {Foreshadow: Extracting the Keys to the {Intel SGX} Kingdom with Transient Out-of-Order Execution},
+    booktitle = {Proceedings of the 27th {USENIX} Security Symposium},
+    year = {2018},
+    month = {August},
+    publisher = {{USENIX} Association},
+    note = {See also technical report Foreshadow-NG~\cite{Weisse2018ForeshadowNG}}
+}
+% Foreshadow-NG
+@article{
+    Weisse2018ForeshadowNG,
+    title={{Foreshadow-NG}: Breaking the Virtual Memory Abstraction with Transient Out-of-Order Execution},
+    author={Weisse, Ofir and Van Bulck, Jo and Minkin, Marina and  Genkin, Daniel and Kasikci, Baris and Piessens, Frank and Silberstein, Mark and Strackx, Raoul and Wenisch, Thomas F. and Yarom, Yuval},
+    journal = {Technical Report},
+    year = {2018},
+    note = {See also {USENIX} Security paper Foreshadow~\cite{VanBulck2018Foreshadow}}
+}
+% Spoiler
+@article{
+    Islam2019Spoiler,
+    title = {SPOILER: Speculative Load Hazards Boost Rowhammer and Cache Attacks},
+    author = {Saad Islam and Ahmad Moghimi and Ida Bruhns and Moritz Krebbel and Berk G{\"u}lmezoglu and Thomas Eisenbarth and Berk Sunar},
+    journal = {CoRR},
+    year = {2019},
+    volume = {abs/1903.00446}
+}
+% ZombieLoad
+@article{
+    Schwarz2019ZombieLoad,
+    title = {{ZombieLoad}: Cross-Privilege-Boundary Data Sampling},
+    author = {Schwarz, Michael and Lipp, Moritz and Moghimi, Daniel and Van Bulck, Jo and Stecklina, Julian and Prescher, Thomas and Gruss, Daniel},
+    journal = {arXiv:1905.05726},
+    year = {2019}
+}
+% RIDL
+@inproceedings{
+    VanSchaik2019RIDL,
+    title = {{RIDL}: Rogue In-flight Data Load},
+    booktitle = {S\&{P}},
+    author = {van Schaik, Stephan and Milburn, Alyssa and Österlund, Sebastian and Frigo, Pietro and Maisuradze, Giorgi and Razavi, Kaveh and Bos, Herbert and Giuffrida, Cristiano},
+    month = may,
+    year = {2019}
+}
+% FallOut
+@article{
+    Minkin2019Fallout,
+    title = {{Fallout}: Reading Kernel Writes From User Space},
+    author = {Minkin, Marina and Moghimi, Daniel and Lipp, Moritz and Schwarz, Michael and Van Bulck, Jo, and Genkin, Daniel and Gruss, Daniel and Sunar, Berk and Piessens, Frank and Yarom, Yuval},
+    year = {2019}
+}
+% PortSmash
+@misc{
+    Alejandro2018Port,
+    author = {Alejandro Cabrera Aldaya and Billy Bob Brumley and Sohaib ul Hassan and Cesar Pereida García and Nicola Tuveri},
+    title = {Port Contention for Fun and Profit},
+    howpublished = {Cryptology ePrint Archive, Report 2018/1060},
+    year = {2018},
+    note = {\url{https://eprint.iacr.org/2018/1060}},
+}
+% Spectre to Stay
+@article{
+    McIlroy2019SpectreIH,
+    title = {Spectre is here to stay: An analysis of side-channels and speculative execution},
+    author = {Ross McIlroy and Jaroslav Sevc{\'i}k and Tobias Tebbi and Ben L. Titzer and Toon Verwaest},
+    journal = {ArXiv},
+    year = {2019},
+    volume = {abs/1902.05178}
+}
+% Spectre Returns
+@inproceedings {
+    Esmaeil2018Spectre,
+    author = {Esmaeil Mohammadian Koruyeh and Khaled N. Khasawneh and Chengyu Song and Nael Abu-Ghazaleh},
+    title = {Spectre Returns! Speculation Attacks using the Return Stack Buffer},
+    booktitle = {12th {USENIX} Workshop on Offensive Technologies ({WOOT} 18)},
+    year = {2018},
+    address = {Baltimore, MD},
+    url = {https://www.usenix.org/conference/woot18/presentation/koruyeh},
+    publisher = {{USENIX} Association}
+}
+% ---------------------------------
+% FUNDAMENTAÇÃO TEÓRICA
+% ---------------------------------
+% (BRITO, 2017) = instruções convertidas para micro operações.
+@misc{
+    Alisson2017Introducao,
+	author = {Alisson Vasconcelos de Brito},
+	date-added = {2013-02-24},
+	date-modified = {2017-12-12},
+	title = {Introdução a Arquitetura de Computadores},
+	url = {http://producao.virtual.ufpb.br/books/edusantana/introducao-a-arquitetura-de-computadores-livro/livro/livro.chunked/index.html},
+	urlaccessdate = {05 jun 2019},
+	year = {2017}
+}
+% (FOG, 2017) = snowball = execução fora de ordem.
+@article{
+    Fog2017Microarchitecture,
+	author = {Agner Fog},
+	date-added = {2017-05},
+	date-modified = {2018-09-15},
+	title = {The Microarchitecture of Intel, AMD and VIA CPUs},
+	url = {http://www.agner.org/optimize/microarchitecture.pdf},
+	urlaccessdate = {05 jun 2019},
+	publisher = {Technical University of Denmark},
+	year = {2017}
+}
+% (DAS, 2018) = modos de endereçamento.
+@misc{
+    Debarshi2018Addressing,
+    author = {Debarshi Das},
+	date-added = {2018-06-29},
+	date-modified = {2018-06-29},
+	title = {Addressing Modes In Computer Architecture With Diagram},
+	url = {https://www.csetutor.com/addressing-modes-in-computer-architecture-diagram-examples/},
+	urlaccessdate = {05 jun 2019},
+	year = {2018}
+}
+% Yarom et al. (2015) = explicação da hierarquia da cache e tamanhos.
+@article{
+    Yarom2015MappingTI,
+    title = {Mapping the Intel Last-Level Cache},
+    author = {Yuval Yarom and Qian Ge and Fangfei Liu and Ruby B. Lee and Gernot Heiser},
+    journal = {IACR Cryptology ePrint Archive},
+    year = {2015},
+    volume = {2015},
+    pages = {905}
+}
+% ---------------------------------
+% CONCLUSÃO PARCIAL
+% ---------------------------------
+% ------------------------------------------------------------------------
+% REFERENCIAL METODOLÓGICO
+% ------------------------------------------------------------------------
+% ---------------------------------
+% CLASSIFICAÇÃO DA PESQUISA
+% ---------------------------------
+% (MENDONÇA, 2017) = pesquisa básica.
+@article{
+    Priscilla2017Metodologia,
+    title = {A METODOLOGIA CIENT{\'I}FICA EM PESQUISAS EDUCACIONAIS: PENSAR E FAZER CI{\^E}NCIA},
+    author = {de Oliveira Mendon{\c{c}}a, Priscilla Bibiano},
+    journal = {Interfaces Cient{\'\i}ficas-Educa{\c{c}}{\~a}o},
+    volume = {5},
+    number = {3},
+    pages = {87--96},
+    year = {2017}
+}
+% (ROCHA et al., 2016) = pesquisa explicativa e pesquisa quantitativa.
+@article{
+    Rocha2016Dom,
+    title = {O dom da produ{\c{c}}{\~a}o acad{\^e}mica: manual de normaliza{\c{c}}{\~a}o e metodologia de pesquisa},
+    author = {Rocha, Anac{\'e}lia Santos and Costa, Beatriz Souza and Cota, Maria Aparecida Leite Mendes and Rios, Mariza and Bizawu, Sebastien Kiwonghi},
+    journal = {Belo Horizonte: Escola Superior Dom Helder C{\^a}mara},
+    year = {2016}
+}
+% (FABIOLA; GARCIA, 2015) = bibliográfico, documental e experimental.
+@misc{
+    Praca2015Metodologia,
+    title = {Metodologia da pesquisa cient{\'\i}fica: organiza{\c{c}}{\~a}o estrutural e os desafios para redigir o trabalho de conclus{\~a}o},
+    author = {PRA{\c{C}}A, Fab{\'\i}ola Silva Garcia},
+    year = {2015},
+    publisher = {FNSA}
+}
+% (SETIA, 2016) = estudo de tempo transversal (cross-sectional).
+@article{
+    Setia2016Methodology,
+    title = {Methodology Series Module 3: Cross-sectional Studies},
+    author = {Setia, Maninder Singh},
+    journal = {Indian journal of dermatology},
+    volume = {61},
+    number = {3},
+    pages = {261},
+    year = {2016},
+    publisher = {Wolters Kluwer--Medknow Publications}
+}
+% ---------------------------------
+% DESCRIÇÃO DOS PROCEDIMENTOS
+% ---------------------------------
+% (CRUZ et al., 2016) = significado de exploit.
+@article{
+    Cruz2016Estudo,
+    title = {Estudo de caso de Ataques de Nega{\c{c}}{\~a}o de Servi{\c{c}}o (DDoS)},
+    author = {Cruz, Luiz and Ramos, P{\'e}ricles and Vasconcelos, Samuel and Torres, Claudines},
+    journal = {Caderno de Estudos Tecnol{\'o}gicos},
+    volume = {3},
+    number = {1},
+    pages = {75--93},
+    year = {2016}
+}
+% (PRESS, 2019) = significado de exploit.
+@misc{
+    Cambridge2019Exploit,
+    editor = {Cambridge University Press},
+    title = {Definition of “exploit” from the Cambridge Advanced Learner's Dictionary \& Thesaurus},
+    year = {2019},
+    url = {https://dictionary.cambridge.org/dictionary/english/exploit}
+}
+% ------------------------------------------------------------------------
+% TESTES E RESULTADOS
+% ------------------------------------------------------------------------
+% ---------------------------------
+% T01
+% ---------------------------------
+% (INC, 2009) = explicação do Linux Kernel Tables.
+@misc{
+    EQWARE2009Capturing,
+	author = {EQWARE Engineering Inc},
+	date-added = {2009-07},
+	date-modified = {2009-07},
+	howpublished = {EQWARE Engineering Inc},
+	title = {Capturing Process Memory Usage Under Linux},
+	url = {https://www.eqware.net/articles/CapturingProcessMemoryUsageUnderLinux/index.html},
+	urlaccessdate = {10 jun 2019},
+	year = {2009}
+}
+% ---------------------------------
+% T02
+% ---------------------------------
+% (CORPORATION, 2019b) = documentação da instrução _mm_clflush.
+@manual{
+    Intel2018Intrinsics,
+	author = {Intel Corporation},
+	date-added = {2018-04-17},
+	date-modified = {2019-04-17},
+	month = {Abr.},
+	title = {Intrinsics Guide},
+	url = {https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_clflush&expand=672},
+	urlaccessdate = {23 mai. 2019},
+	year = {2019}
+}
+% ---------------------------------
+% T03
+% ---------------------------------
+% Intel (2019a) = especificações do processador usado nos experimentos.
+@manual{
+    Intel2019Corei3,
+	author = {Intel Corporation},
+	date-added = {2019-05-26},
+	date-modified = {2019-05-26},
+	month = {Mai.},
+	title = {Intel® Core™ i3-5005U Processor},
+	url = {https://ark.intel.com/content/www/us/en/ark/products/84695/intel-core-i3-5005u-processor-3m-cache-2-00-ghz.html},
+	urlaccessdate = {26 mai. 2019},
+	year = {2019}
+}
+% CPU Wolrd (2016) = especificações do processador usado nos experimentos.
+@manual{
+    CPU2016Corei3,
+	author = {CPU World},
+	date-added = {2016-11-07},
+	date-modified = {2019-01-18},
+	month = {Nov.},
+	title = {Intel® Core™ i3-5005U Specifications},
+	url = {http://www.cpu-world.com/CPUs/Core_i3/Intel-Core20i3-5005U20Mobile20processor.html},
+	urlaccessdate = {26 mai. 2019},
+	year = {2016}
+}
+% Ubuntu (2019) = manual da função lscpu.
+@manual{
+    Ubuntu2019Lscpu,
+	author = {Cai Qian and Karel Zak and Heiko Carstens},
+	title = {Ubuntu Manuals - lscpu},
+	url = {http://manpages.ubuntu.com/manpages/xenial/man1/lscpu.1.html},
+	urlaccessdate = {26 mai. 2019},
+	year = {2019}
+}
+% ---------------------------------
+% T04
+% ---------------------------------
+% ---------------------------------
+% DISCUSSÃO
+% ---------------------------------
+% ------------------------------------------------------------------------
+% NÃO UTILIZADOS
+% ------------------------------------------------------------------------
+% KASLR
+@inproceedings{
+    Daniel2017KASLR,
+    title = {KASLR is Dead: Long Live KASLR},
+    author = {Daniel Gruss and Moritz Lipp and Michael Schwarz and Richard Fellner and Cl{\'e}mentine Maurice and Stefan Mangard},
+    year = {2017},
+    doi = {10.1007/978-3-319-62105-0_11},
+    language = {English},
+    isbn = {9783319621043},
+    volume = {10379 LNCS},
+    series = {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+    publisher = {Springer-Verlag Italia},
+    pages = {161--176},
+    booktitle = {Engineering Secure Software and Systems - 9th International Symposium, ESSoS 2017, Proceedings},
+    address = {Italy}
+}
+% Benchmarks
+@inproceedings{
+    Kouwe2019Benchmarking,
+    numpages = {16},
+    publisher = {IEEE},
+    booktitle = {IEEE European Symposium on Security and Privacy (EuroS\&P)},
+    author = {van der Kouwe, Erik and Heiser, Gernot and Andriesse, Dennis and Bos, Herbert and Giuffrida, Cristiano},
+    month = {Jun},
+    keywords = {evaluation, experimental methodology},
+    year = {2019},
+    date = {2019-6-17},
+    title = {{SoK}: Benchmarking Flaws in Systems Security},
+    address = {Stockholm, Sweden}
+}

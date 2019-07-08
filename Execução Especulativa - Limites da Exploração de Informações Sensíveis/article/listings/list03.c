@@ -23,9 +23,9 @@
 #include <x86intrin.h>     /* for rdtscp and clflush */
 
 #endif
-/********************************************************************
+/***********************************
 Analysis code
-********************************************************************/
+************************************/
 #define CACHE_HIT_THRESHOLD (80)  /* assume cache hit if time <= threshold */
 typedef struct {
 	uint64_t pfn : 54;

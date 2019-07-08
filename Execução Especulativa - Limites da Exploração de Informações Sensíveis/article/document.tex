@@ -18,6 +18,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 %\renewcommand\IEEEkeywordsname{Palavras-chave}
+\renewcommand{\lstlistingname}{Figura}
 
 \begin{document}
 \selectlanguage{brazil}
@@ -57,10 +58,13 @@ Considerando que os pesquisadores citados utilizaram \emph{softwares} com estrut
 
 Através deste questionamento, esta pesquisa visa esclarecer, explicar e aplicar técnicas desenvolvidas pelos pesquisadores supramencionados. Visando elencar e comprovar as circunstâncias envolvidas e que realmente são necessárias para se executar vazamentos de informações sensíveis. Tendo como foco, a exploração da execução especulativa em \emph{softwares} cujas estruturas se desconhece. De forma a solidificar limitações desta técnica de exploração em particular.
 
+O restante deste trabalho está organizado como segue. Na Seção II, os termos e definições relacionados à execução especulativa e os ataques de canais laterais, são esclarecidos. Na Seção III, os trabalhos relacionados são apresentados. Os materiais e métodos são apresentados na Seção IV. Na Seção V os experimentos são realizados visando comprovação das hipóteses também formuladas na mesma seção. A Seção VI descreve destes experimentos. Por fim, na Seção VII, as conclusões e trabalhos futuros são apresentados.
+
 % ------------------------------------------------------------------------
 % FUNDAMENTAÇÃO TEÓRICA
 % ------------------------------------------------------------------------
 \section{Fundamentação Teórica}
+Com o objetivo de esclarecer e contextualizar o tema desta pesquisa, esta sessão aborda definições dos conceitos a respeito da execução especulativa e complementos essenciais para o entendimento dos ataques que utilizam canais laterais.
 % ---------------------------------
 % EXECUÇÃO FORA DE ORDEM
 % ---------------------------------
@@ -150,10 +154,6 @@ No locais onde a instrução \lstinline[language=C, style=c]{_mm_clflush} era ut
 
 Após os testes, a aplicação atacante parou sua execução com um sinal de \emph{SIGSERV (Segmentation fault}, ou falha de segmentação). Acusando a não permissão de realização do \emph{flush} de um endereço físico, fora do próprio contexto. Isto acontece pois, segundo \emph{Intrinsics Guide} da \emph{Intel}, instruções de \emph{flush} são utilizadas para limpar uma informação de mesmo contexto, em todos os níveis da hierarquia da cache \cite{Intel2018Intrinsics}. E, ao especular os dados o \emph{exploit} precisa fazer o ciclo de tentativa de acesso e limpeza da cache sucessivas vezes, inferindo o menor tempo de acesso das variáveis. Quando isto não ocorre no mesmo contexto, o \emph{exploit} não é capaz de manipular o comportamento da memória cache e portanto, não consegue realizar as inferências.
 
-\begin{comment}
-explicar mais sobre o que é "contexto" nesse sentindo
-\end{comment}
-
 % ---------------------------------
 % T03
 % ---------------------------------
@@ -165,10 +165,6 @@ A figura \ref{lst:05} mostra o código de adaptação que foi utilizado para cal
 \lstinputlisting[language=C, style=c, caption={Contagem do tempo de execução e geração do vetor randômico.}, label={lst:05}]{listings/list05.c}
 
 Após a finalização deste experimento, concluiu-se que, ao saber o ponteiro de inicio da variável que contém a informação secreta e de posse do tamanho desta informação, é possível inferir todos os dados em uma velocidade que está num intervalo de \textbf{4 KB/s} a \textbf{7 KB/s} (para o ambiente em questão). Mesmo que a informação inferida seja maior que a memória cache. Isto porque, a transferência dos dados acontece com um endereço por vez. Cada endereço inferido passa por 3 fases: treinamento (\emph{loop} que acontece 30 vezes), leitura (\emph{loop} de 256 vezes) e inferência da melhor leitura (\emph{loop} de 256 vezes). Sendo que, cada etapa ocorre 999 vezes, garantindo uma \textbf{acurácia de 0,01\%} nos resultados, conforme \citeonline{Kocher2018Spectre}.
-
-\begin{comment}
-Adicionar uma imagem com as saídas.
-\end{comment}
 
 % ---------------------------------
 % T04
@@ -206,19 +202,31 @@ Estas explorações podem acontecer em \emph{browsers}, máquinas virtuais, serv
 
 Nesta pesquisa, foi possível delimitar as circunstâncias necessárias para a exploração da primeira variação da \emph{Spectre}. Além de realizar comparações históricas fiéis as descobertas dos pesquisadores envolvidos. Esta pesquisa também possibilitou a sistematização e segmentação de um conhecimento relativamente novo e com um alto potencial de relevância acadêmica. O que pode auxiliar pesquisadores em revisões da literatura ou até mesmo em técnicas de pesquisa para produção de novos artigos sobre o assunto.
 
-O resultado negativo obtido nos testes de extração de dados de outros contextos pode ser considerado como uma limitação desta pesquisa ou uma barreira técnica. Tal limitação poderá ser superada por outras pesquisas que apresentem resultados positivos no futuro. Da mesma maneira, as explicações para os testes negativos podem ser extraídas com mais detalhes em pesquisas futuras que considerem outras fontes de materiais não processados.
+A limitação obtida nos testes de extração de dados de outros contextos pode ser considerado como uma limitação desta pesquisa ou uma barreira técnica. Tal limitação poderá ser superada por outras pesquisas que apresentem resultados positivos no futuro. Da mesma maneira, as explicações para os testes negativos podem ser extraídas com mais detalhes em pesquisas futuras que considerem outras fontes de materiais não processados.
 
-Como perspectiva de pesquisas futuras, pretende-se realizar novos testes para comprovar as limitações da primeira variação da \emph{Spectre}. Porém, com foco em outras formas de exploração de informações sensíveis. Não somente limitando-se a exploração de código nativo, como o feito nesta pesquisa. Mas, explorando outras possibilidades já elucidadas por Jann Horn, como por exemplo os interpretadores de código em tempo real (JIT, \emph{just-in-time}).
+Como perspectiva de pesquisas futuras, pretende-se realizar novos testes para comprovar as limitações da primeira variação da \emph{Spectre}. Porém, com foco em outras formas de exploração de informações sensíveis, não somente limitando-se a exploração de código nativo como o feito nesta pesquisa, mas, explorando outras possibilidades já elucidadas por Jann Horn, como por exemplo os interpretadores de código em tempo real (JIT, \emph{just-in-time}).
 
 % ------------------------------------------------------------------------
 % AGRADECIMENTOS
 % ------------------------------------------------------------------------
 \section*{Agradecimentos}
-Agradecimentos a \textbf{Anderson} Eduardo Nascimento (Co-Fundador na \emph{Allele Security Intelligence}\footnote{Acesso em: \url{https://allelesecurity.com.br}}) pelas correções de conceitos, delimitação do escopo de pesquisa e informações pertinentes ao entendimento dos conceitos fundamentais, além de recomendações de matérias relacionadas. Também a \textbf{Alan} Messias Cordeiro (alacerda), pela ajuda na escolha do tema e matérias relacionadas. E \textbf{Maycon} Vitali (Fundador da \emph{Hack N' Roll}) pelas sugestões de material relacionado.
+Agradecimentos a \textbf{Anderson} Eduardo Nascimento (Co-Fundador na \emph{Allele Security Intelligence}\footnote{Acesso em: \url{https://allelesecurity.com.br}}). Também a \textbf{Alan} Messias Cordeiro (alacerda). E \textbf{Maycon} Vitali (Fundador da \emph{Hack N' Roll}).
 
 % ------------------------------------------------------------------------
 % REFERÊNCIAS
 % ------------------------------------------------------------------------
-\bibliographystyle{IEEEtranS}
+\bibliographystyle{IEEEtran}
 \bibliography{references}
+
+% ------------------------------------------------------------------------
+% APÊNDICES
+% ------------------------------------------------------------------------
+\appendices
+\section{Códigos do T01 e T02}
+\label{appendix:a}
+As figuras \ref{lst:02} e \ref{lst:04} contém os códigos utilizados como aplicações ``vítimas'' e a figura \ref{lst:03} contém o código da aplicação ``atacante''. Tais foram utilizados e descritos nos testes 01 e 02.
+\lstinputlisting[language=C, style=c, caption={Aplicação vítima.}, label={lst:02}]{listings/list02.c}
+\lstinputlisting[language=C, style=c, caption={Aplicação atacante.}, label={lst:03}]{listings/list03.c}
+\lstinputlisting[language=C, style=c, caption={Aplicação vítima modificada.}, label={lst:04}]{listings/list04.c}
+
 \end{document}
